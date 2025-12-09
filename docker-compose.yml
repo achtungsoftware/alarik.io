@@ -12,3 +12,4 @@ services:
         condition: on-failure
     labels:
       - traefik.http.middlewares.my-compress.compress=true
+      - traefik.http.routers.alarik-web-hk1mzy-55-websecure.middlewares=my-compress@file
