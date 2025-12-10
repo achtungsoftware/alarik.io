@@ -120,13 +120,15 @@ await client.send(new PutObjectCommand({
         <CodeConsole :code="awsExample" lang="typescript" title="example.ts" />
     </UPageSection>
 
-    <UPageCTA
-        title="Ready to Try Alarik?"
-        description="Get started in minutes with Docker Compose. No complex setup, no vendor lock-in."
-        variant="subtle"
-        :links="[
-            { label: 'Read the Docs', to: '/docs', trailingIcon: 'i-lucide-arrow-right', class: 'rounded-full' },
-            { label: 'Star on GitHub', color: 'neutral', variant: 'ghost', to: 'https://github.com/achtungsoftware/alarik', target: '_blank', trailingIcon: 'i-lucide-github', class: 'rounded-full', },
-        ]"
-    />
+    <UPageSection>
+        <UPageCTA
+            title="Ready to Try Alarik?"
+            description="Get started in minutes with Docker Compose. No complex setup, no vendor lock-in."
+            variant="subtle"
+            :links="[
+                { label: 'Read the Docs', to: '/docs', trailingIcon: 'i-lucide-arrow-right', class: 'rounded-full' },
+                { label: 'Star on GitHub', color: 'neutral', variant: 'ghost', to: 'https://github.com/achtungsoftware/alarik', target: '_blank', trailingIcon: 'i-lucide-github', class: 'rounded-full' },
+            ]"
+        />
+    </UPageSection>
 </template>
