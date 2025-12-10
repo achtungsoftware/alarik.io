@@ -34,12 +34,12 @@ const heroLinks = ref<ButtonProps[]>([
         trailingIcon: "i-lucide-arrow-right",
     },
     {
-        label: "View on GitHub",
+        label: "View Demo",
         color: "neutral",
         variant: "subtle",
-        to: "https://github.com/achtungsoftware/alarik",
+        to: "https://demo.alarik.io",
         target: "_blank",
-        trailingIcon: "i-lucide-github",
+        trailingIcon: "i-lucide-arrow-right",
         class: "rounded-full",
     },
 ]);
