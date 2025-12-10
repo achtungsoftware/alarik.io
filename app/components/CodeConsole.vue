@@ -29,10 +29,10 @@ const props = withDefaults(defineProps<Props>(), {
 });
 
 const colorMode = useColorMode();
-const highlighter = await getShikiHighlighter();
-const theme = computed(() => (colorMode.value === "dark" ? "one-dark-pro" : "github-light"));
+const highlighter = await useShikiHighlighter();
+const theme = computed(() => (colorMode.value === "dark" ? "one-dark-pro" : "light-plus"));
 const html = computed(() => {
-    return highlighter.highlight(props.code, { lang: props.lang, theme: theme.value });
+    return highlighter.codeToHtml(props.code, { lang: props.lang, theme: theme.value });
 });
 
 const didCopy = ref(false);
@@ -88,5 +88,10 @@ watchEffect(() => {
 
 :deep(code) {
     background: transparent !important;
+}
+
+:deep(.line) {
+    display: block;
+    line-height: 0.25rem;
 }
 </style>

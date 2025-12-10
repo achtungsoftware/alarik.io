@@ -201,3 +201,18 @@ limitations under the License.
     background-size: 20px 20px;
     opacity: 0.6;
 }
+
+/* Nuxt Content Shiki dual theme - only for content blocks (not CodeConsole) */
+.content-block pre.shiki span {
+    color: var(--shiki-default) !important;
+    background-color: var(--shiki-default-bg) !important;
+}
+
+.content-block pre.shiki {
+    background-color: var(--ui-bg-elevated) !important;
+}
+
+html.dark .content-block pre.shiki span {
+    color: var(--shiki-dark) !important;
+    background-color: var(--shiki-dark-bg) !important;
+}

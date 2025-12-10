@@ -75,13 +75,13 @@ const items: BreadcrumbItem[] = breadcrumbNavItems.map((navItem: ContentNavigati
         </UPageHeader>
 
         <UPageBody>
-            <ContentRenderer v-if="page" :value="page" />
+            <ContentRenderer v-if="page" :value="page" class="content-block" />
             <USeparator v-if="surround?.length" />
             <UContentSurround :surround="surround" />
         </UPageBody>
 
         <template v-if="page?.body?.toc?.links?.length" #right>
-            <UContentToc title="Content" :links="page.body?.toc?.links"  />
+            <UContentToc title="Content" :links="page.body?.toc?.links" />
         </template>
     </UPage>
 </template>

@@ -17,7 +17,7 @@ limitations under the License.
 export default defineNuxtConfig({
     compatibilityDate: "2025-07-15",
     devtools: { enabled: true },
-    modules: ["@nuxt/ui", "@nuxt/image", "@nuxt/content", "nuxt-shiki", "@nuxtjs/plausible"],
+    modules: ["@nuxt/ui", "@nuxt/image", "@nuxt/content", "@nuxtjs/plausible"],
     css: ["~/assets/css/main.css"],
     ssr: true,
     content: {
@@ -25,10 +25,10 @@ export default defineNuxtConfig({
             markdown: {
                 highlight: {
                     theme: {
-                        default: "github-light",
+                        default: "light-plus",
                         dark: "one-dark-pro",
                     },
-                    preload: ["bash", "dockerfile", "yaml", "typescript"],
+                    preload: ["bash", "shell", "dockerfile", "yaml", "typescript", "javascript", "swift"],
                 },
             },
         },
@@ -40,10 +40,6 @@ export default defineNuxtConfig({
         optimizeDeps: {
             exclude: ["@nuxt/content"],
         },
-    },
-    shiki: {
-        bundledThemes: ["one-dark-pro", "github-light"],
-        bundledLangs: ["bash", "shell", "dockerfile", "yaml", "typescript", "javascript"],
     },
     plausible: {
         domain: "alarik.io",
