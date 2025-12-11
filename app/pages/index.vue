@@ -106,8 +106,8 @@ await client.send(new PutObjectCommand({
 </script>
 
 <template>
-    <UPageHero class="bg-muted border-b border-default" title="High-Performance Open-Source Object Storage" description="A modern, S3-compatible object store that is fast, simple to operate, easy to extend, and genuinely open-source. Built with Swift for maximum performance and safety." :links="heroLinks" orientation="horizontal">
-        <CodeConsole :code="quickStart" lang="bash" title="terminal" />
+    <UPageHero class="bg-muted border-b border-default" title="High-Performance Open-Source Object Storage" description="A modern, S3-compatible object store that is fast, simple to operate, easy to extend, and genuinely open-source. Built with Swift for maximum performance and safety." :links="heroLinks">
+        <UColorModeImage alt="Alarik object store object browser screenshot" :placeholder="[59, 33]" sizes="sm:950px md:1200px lg:1600px" format="webp" width="1600" light="/img/web/screenshots/console_browser_light.png" dark="/img/web/screenshots/console_browser_dark.png" class="overflow-hidden rounded-md md:rounded-lg lg:rounded-2xl border border-default shadow-lg" />
     </UPageHero>
 
     <UPageSection title="Why Alarik?" description="Built to address fragility in the object storage ecosystem with a focus on transparency, performance, and developer experience.">
