@@ -15,9 +15,13 @@ limitations under the License.
 */
 
 export default defineNuxtConfig({
+    site: {
+        url: "https://alarik.io",
+        name: "Alarik",
+    },
     compatibilityDate: "2025-07-15",
     devtools: { enabled: true },
-    modules: ["@nuxt/ui", "@nuxt/image", "@nuxt/content", "@nuxtjs/plausible"],
+    modules: ["@nuxt/ui", "@nuxt/image", "@nuxtjs/plausible", "@nuxtjs/sitemap", "@nuxt/content"],
     css: ["~/assets/css/main.css"],
     ssr: true,
     content: {
