@@ -24,6 +24,7 @@ const { data: files } = useLazyAsyncData("search", () => queryCollectionSearchSe
 });
 
 const searchTerm = ref("");
+const route = useRoute();
 
 useHead({
     htmlAttrs: { lang: "en" },
@@ -31,6 +32,10 @@ useHead({
     viewport: "width=device-width, initial-scale=1, maximum-scale=1",
     title: "Alarik",
     link: [
+        {
+            rel: "canonical",
+            href: "https://alarik.io" + route.path,
+        },
         { rel: "icon", type: "image/png", sizes: "96x96", href: "/favicon-96x96.png" },
         { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
         { rel: "shortcut icon", href: "/favicon.ico" },

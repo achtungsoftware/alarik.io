@@ -77,15 +77,6 @@ const features = [
     },
 ];
 
-const quickStart = `# Alarik is still in alpha,
-# please do not use it in production yet!
-
-# Clone the repository
-git clone https://github.com/achtungsoftware/alarik.git
-
-# Start with Docker Compose
-docker compose -f docker-compose.deploy.yml up --build -d`;
-
 const awsExample = `import { S3Client, PutObjectCommand } from "@aws-sdk/client-s3";
 
 const client = new S3Client({
