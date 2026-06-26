@@ -24,6 +24,11 @@ const items = computed<NavigationMenuItem[]>(() => [
         active: route.path.startsWith("/minio-alternative"),
     },
     {
+        label: "RustFS Alternative",
+        to: "/rustfs-alternative",
+        active: route.path.startsWith("/rustfs-alternative"),
+    },
+    {
         label: "Installation",
         to: "/docs/installation",
         active: route.path.startsWith("/docs/installation") && route.path != "/docs",
