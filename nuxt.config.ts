@@ -49,5 +49,8 @@ export default defineNuxtConfig({
         domain: "alarik.io",
         ignoredHostnames: ["localhost"],
         apiHost: "https://plausible.achtungsoftware.de",
+        autoOutboundTracking: true,
+        formSubmissions: true,
+        fileDownloads: true,
     },
 });
