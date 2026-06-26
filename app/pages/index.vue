@@ -77,6 +77,88 @@ const features = [
     },
 ];
 
+const performanceFeatures = [
+    {
+        title: "Low-Latency I/O",
+        description: "Optimized storage engine designed for minimal latency, especially important for small object workloads common in web applications.",
+        icon: "i-lucide-gauge",
+    },
+    {
+        title: "Highly Parallel Request Handling",
+        description: "Built on Swift's modern async/await concurrency model and SwiftNIO for efficient handling of thousands of concurrent connections.",
+        icon: "i-lucide-layers",
+    },
+    {
+        title: "Memory Safe Architecture",
+        description: "Swift's memory safety guarantees mean no buffer overflows, no use-after-free bugs, and predictable performance under load.",
+        icon: "i-lucide-shield-check",
+    },
+    {
+        title: "No Garbage Collection Pauses",
+        description: "Swift uses automatic reference counting instead of a tracing garbage collector, so there are no GC pause spikes under load.",
+        icon: "i-lucide-timer",
+    },
+];
+
+const gettingStarted = [
+    {
+        title: "Pull the Image",
+        description: "Grab the official Alarik and console images from GitHub Container Registry. No build step, no dependencies to install.",
+        icon: "i-lucide-download",
+        value: 1,
+    },
+    {
+        title: "Run docker-compose",
+        description: "Start the API and web console with a single docker compose up -d. Two containers, one command.",
+        icon: "i-lucide-terminal",
+        value: 2,
+    },
+    {
+        title: "Connect Your SDK",
+        description: "Point your existing AWS SDK, s3cmd, or rclone setup at your Alarik endpoint. No code changes required.",
+        icon: "i-lucide-plug",
+        value: 3,
+    },
+];
+
+const useCases = [
+    {
+        title: "Self-Hosted Cloud Storage",
+        description: "Replace expensive cloud storage with your own S3-compatible infrastructure. Full control over your data, no vendor lock-in.",
+        icon: "i-lucide-cloud",
+    },
+    {
+        title: "Application Backend Storage",
+        description: "Store user uploads, media files, and application data with a reliable, high-performance object store.",
+        icon: "i-lucide-database",
+    },
+    {
+        title: "Backup & Archive",
+        description: "Cost-effective long-term storage for backups, logs, and archived data with S3-compatible tooling you already know.",
+        icon: "i-lucide-archive",
+    },
+    {
+        title: "Development & Testing",
+        description: "Local S3-compatible storage for development environments. Test your S3 integrations without cloud costs or network latency.",
+        icon: "i-lucide-code-2",
+    },
+];
+
+const switchingCards = [
+    {
+        title: "Migrating from MinIO?",
+        description: "See why teams are switching to Alarik - actively developed, Apache 2.0, and built for the post-MinIO era.",
+        icon: "i-lucide-arrow-left-right",
+        to: "/minio-alternative",
+    },
+    {
+        title: "Comparing with RustFS?",
+        description: "See how Alarik's focused, Swift-native approach compares to RustFS's multi-protocol platform.",
+        icon: "i-lucide-git-compare",
+        to: "/rustfs-alternative",
+    },
+];
+
 const awsExample = `import { S3Client, PutObjectCommand } from "@aws-sdk/client-s3";
 
 const client = new S3Client({
@@ -101,14 +183,33 @@ await client.send(new PutObjectCommand({
         <UColorModeImage alt="Alarik object store object browser screenshot" :placeholder="[59, 33]" sizes="sm:950px md:1200px lg:1600px" format="webp" width="1600" light="/img/web/screenshots/console_browser_light.png" dark="/img/web/screenshots/console_browser_dark.png" class="overflow-hidden rounded-md md:rounded-lg lg:rounded-2xl border border-default shadow-lg" />
     </UPageHero>
 
-    <UPageSection title="Why Alarik?" description="Built to address fragility in the object storage ecosystem with a focus on transparency, performance, and developer experience.">
+    <UPageSection headline="Why Alarik?" title="Everything You Need, Nothing You Don't" description="Built to address fragility in the object storage ecosystem with a focus on transparency, performance, and developer experience.">
         <UPageGrid>
             <UPageCard v-for="(feature, index) in features" :key="index" v-bind="feature" spotlight />
         </UPageGrid>
     </UPageSection>
 
+    <UPageSection class="bg-muted border-y border-default" headline="Performance" title="Built for Speed" description="Alarik is built with Swift and SwiftNIO for low-latency I/O and highly parallel request handling. Even in alpha, benchmarks show throughput competitive with established S3-compatible stores." :features="performanceFeatures" />
+
+    <UPageSection headline="Get Started" title="Up and Running in Minutes" description="No complex cluster setup, no configuration sprawl. Just Docker and your existing S3 tooling.">
+        <UTimeline :items="gettingStarted" orientation="vertical" size="lg" class="w-full lg:hidden" />
+        <UTimeline :items="gettingStarted" orientation="horizontal" size="lg" class="hidden w-full lg:flex" />
+    </UPageSection>
+
     <UPageSection headline="S3 Compatible" title="Drop-In Replacement for Your Existing Workflows" description="Use the official AWS SDK, s3cmd, rclone, or any S3-compatible tool. No code changes required - just point to your Alarik endpoint and go." orientation="horizontal">
         <CodeConsole :code="awsExample" lang="typescript" title="example.ts" />
+    </UPageSection>
+
+    <UPageSection class="bg-muted border-y border-default" headline="Use Cases" title="Perfect For Any S3 Workload" description="Whether you're building a new application or replacing existing infrastructure, Alarik handles your object storage needs.">
+        <UPageGrid>
+            <UPageCard v-for="(useCase, index) in useCases" :key="index" v-bind="useCase" variant="subtle" />
+        </UPageGrid>
+    </UPageSection>
+
+    <UPageSection headline="Switching?" title="Coming From MinIO or RustFS?" description="See exactly how Alarik compares - license, performance, and philosophy - before you migrate.">
+        <UPageGrid class="sm:grid-cols-2">
+            <UPageCard v-for="(item, index) in switchingCards" :key="index" v-bind="item" variant="subtle" />
+        </UPageGrid>
     </UPageSection>
 
     <UPageSection>
